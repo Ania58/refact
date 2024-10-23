@@ -2,6 +2,7 @@ import { useState } from 'react'
 // import lodearriba from './top'
 import './App.css'
 import empleados from './empleados'
+import cocretaincLogo from './assets/cocretainc.jpg';
 
 
 
@@ -34,16 +35,14 @@ function App() {
       setResult(n1/n2)
     }
 
-
-    
-  
-  
       const almacenamiento = empleados.map((empleado, i) => (
-        <div key={i}>
+        <div key={i} className="employee-card">
+            <div className="employee-info">
           <p>Nombre: {empleados[i].name}</p>
           <p>Apellidos: {empleados[i].lastName}</p>
           <p>Hobbies: {empleados[i].hobbies.join(', ')}</p>
           <p>Edad: {empleados[i].age}</p>
+          </div>
         </div>
       ));
     
@@ -54,7 +53,7 @@ function App() {
     // cabecera: logo
     <div className="envoltura">
       <header>
-      <img src={('./assets/cocretainc.jpg')} />
+      <img src= {cocretaincLogo}  alt="Cocreta INC Logo" />
       </header>
       <main>
       {almacenamiento} 
